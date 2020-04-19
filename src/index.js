@@ -1,39 +1,17 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-const MultiCounter = () => {
-  const [counts, setCounts] = useState({
-    countA: 0,
-    countB: 0,
-  });
+const Room = () => {
+  const [light, setLight] = useState(false);
 
-  const incA = () =>
-    setCounts((counts) => ({
-      ...counts,
-      countA: counts.countA + 1,
-    }));
+  const lightSwitchText = light ? "The room is lit" : "The room is dark";
 
-  const incB = () => {
-    setCounts((counts) => ({
-      ...counts,
-      countB: counts.countB + 1,
-    }));
+  //   Turn the light on or off as well as the text of the button
+  //   using hooks for functional component
+  const handleClick = () => {
+    light ? setLight(false) : setLight(true);
   };
-
-  const badIncA = () =>
-    setCounts({
-      countA: counts.countA + 1,
-    });
-
-  return (
-    <>
-      <div>A: {counts.countA}</div>
-      <div>B: {counts.countB}</div>
-      <button onClick={incA}>Increment A</button>
-      <button onClick={incB}>Increment B</button>
-      <button onClick={badIncA}>Increment A Badly</button>
-    </>
-  );
+  return <button onClick={handleClick}>{lightSwitchText}</button>;
 };
 
-ReactDOM.render(<MultiCounter />, document.querySelector("#root"));
+ReactDOM.render(<Room />, document.querySelector("#root"));
