@@ -1,17 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
-const Room = () => {
-  const [light, setLight] = useState(false);
+//import App from './Room/RoomApp'
+//import App from "./LightSwitch";
+// import App from "./RandomList";
+// import App from "./AudioControls";
+import App from "./AudioControlsImproved";
 
-  const lightSwitchText = light ? "The room is lit" : "The room is dark";
-
-  //   Turn the light on or off as well as the text of the button
-  //   using hooks for functional component
-  const handleClick = () => {
-    light ? setLight(false) : setLight(true);
-  };
-  return <button onClick={handleClick}>{lightSwitchText}</button>;
-};
-
-ReactDOM.render(<Room />, document.querySelector("#root"));
+ReactDOM.render(<App />, document.querySelector("#root"));

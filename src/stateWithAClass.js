@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 class OneTimeButton extends React.Component {
   state = {
@@ -25,7 +24,15 @@ class OneTimeButton extends React.Component {
   }
 }
 
+const App = () => {
+  return <OneTimeButton onClick={() => alert("hi")} />;
+};
+
+export default App;
+
+/** 
 ReactDOM.render(
   <OneTimeButton onClick={() => alert("hi")} />,
   document.querySelector("#root")
 );
+*/
